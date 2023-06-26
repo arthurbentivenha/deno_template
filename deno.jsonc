@@ -1,0 +1,15 @@
+{
+  "tasks": {
+    "start": "deno run --allow-net --allow-read --allow-env main.ts",
+    "dev": "deno run -A --watch=app/ --allow-net --allow-read main.ts"
+  },
+  "imports": {
+    "oak": "https://deno.land/x/oak@v12.5.0/mod.ts",
+    "dotenv": "https://deno.land/x/dotenv@v3.2.2/mod.ts",
+    "oak/helpers": "https://deno.land/x/oak@v12.5.0/helpers.ts",
+    "reflect_metadata": "https://deno.land/x/reflect_metadata@v0.1.12/mod.ts",
+    "zod": "https://deno.land/x/zod@v3.16.1/mod.ts",
+    "log": "https://deno.land/std@0.192.0/log/mod.ts",
+    "typeorm": "npm:typeorm@0.3.16"
+  }
+}
