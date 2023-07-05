@@ -3,10 +3,24 @@ import { Controller, Get } from '../helpers/request.helper.ts'
 
 @Controller('/teste')
 export class TesteController {
-	constructor() {}
+	constructor() { }
 
 	@Get('/')
 	consultar(ctx: Context) {
-		ctx.response.body = 'teste'
+		const teste: any = async () => await this.teste();
+		//const teste2 = async () => await fetch('https://jsonplaceholder.typicode.com/todos/1')
+		console.log(teste.id);
+		ctx.response.body = teste
+	}
+
+	teste() {
+		return new Promise((resolve, reject) => {
+			setTimeout(async () => {
+				const dados = await fetch('https://jsonplaceholder.typicode.com/todos/1').then(res => res.json());
+				//console.log(dados);
+				resolve(dados);
+			}, 1000);
+		});
+
 	}
 }
