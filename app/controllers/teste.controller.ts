@@ -9,7 +9,6 @@ export class TesteController {
 	consultar(ctx: Context) {
 		const teste: any = async () => await this.teste();
 		//const teste2 = async () => await fetch('https://jsonplaceholder.typicode.com/todos/1')
-		console.log(teste.id);
 		ctx.response.body = teste
 	}
 
